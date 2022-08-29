@@ -2,7 +2,7 @@
 
 **PyGrocery Store** is my personal grocery store management project in Python Language.
 
-My intention in this project is to practice what I'm learning and create somethjing with my Python studies
+My intention in this project is to practice what I'm learning and create something with my Python studies
 
 Here you will find some concepts implemented such as OOP, MVC among others
 
