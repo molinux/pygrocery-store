@@ -20,5 +20,11 @@ from DAO import *
 # itensVendidos, vendedor, comprador, quantidadeVendida
 # y = Venda(x, 'Silvana', 'Leonardo', '3')
 # DaoVenda.salvar(y)
-x = DaoVenda.ler()
-print(x[0].comprador)
+# x = DaoVenda.ler()
+# print(x[0].comprador)
+
+# ========== ESTOQUE ==========
+# x = Produtos('Banana', '4', 'Frutas')
+# DaoEstoque.salvar(x, 20)
+# x = DaoEstoque.ler()
+# print(f"{x[0].produto.nome}, {x[0].quantidade}")
