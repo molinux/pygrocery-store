@@ -68,3 +68,24 @@ class DaoEstoque:
             for i in cls.estoque:
                 est.append(Estoque(Produtos(i[0], i[1], i[2]), i[3]))
         return est
+
+class DaoFornecedor:
+    @classmethod
+    def salvar(cls, fornecedor: Fornecedor):
+        with open('fornecedores.txt', 'a') as arq:
+            arq.writelines(fornecedor.nome + "|"
+                        + fornecedor.cnpj + "|"
+                        + fornecedor.telefone + "|"
+                        + fornecedor.categoria)
+            arq.writelines('\n')
+
+    @classmethod
+    def ler(cls):
+        with open('fornecedores.txt', 'r') as arq:
+            cls.fornecedores = arq.readlines()
+        cls.fornecedores = list(map(lambda x: x.replace('\n', ''), cls.fornecedores))
+        cls.fornecedores = list(map(lambda x: x.split('|'), cls.fornecedores))
+        forn = []
+        for i in cls.fornecedores:
+            forn.append(Fornecedor(i[0], i[1], i[2], i[3]))
+        return forn 

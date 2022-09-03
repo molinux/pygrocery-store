@@ -28,3 +28,9 @@ from DAO import *
 # DaoEstoque.salvar(x, 20)
 # x = DaoEstoque.ler()
 # print(f"{x[0].produto.nome}, {x[0].quantidade}")
+
+# ========== FORNECEDORES ==========
+# x = Fornecedor('Arita Comércio', '98787654323456', '2299887766', 'Verduras')
+# DaoFornecedor.salvar(x)
+# x = DaoFornecedor.ler()
+# print(x[0].nome, x[0].cnpj)
