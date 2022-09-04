@@ -1,3 +1,4 @@
+from multiprocessing.connection import Client
 from DAO import *
 
 # Let's test this !
@@ -34,3 +35,9 @@ from DAO import *
 # DaoFornecedor.salvar(x)
 # x = DaoFornecedor.ler()
 # print(x[0].nome, x[0].cnpj)
+
+# ========== CLIENTES ==========
+# x = Pessoa('Andressa Santos', '99877788', '98789876545', 'andressa.santos@uol.com.br', 'Rua Olavo Bilac, 456 - Tijuca')
+# DaoPessoa.salvar(x)
+x = DaoPessoa.ler()
+print(x[0].nome, x[0].email)

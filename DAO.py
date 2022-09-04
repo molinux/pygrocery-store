@@ -89,3 +89,26 @@ class DaoFornecedor:
         for i in cls.fornecedores:
             forn.append(Fornecedor(i[0], i[1], i[2], i[3]))
         return forn 
+
+class DaoPessoa:
+    @classmethod
+    def salvar(cls, pessoa: Pessoa):
+        with open('clientes.txt', 'a') as arq:
+            arq.writelines(pessoa.nome + "|"
+                          + pessoa.telefone + "|"
+                          + pessoa.cpf + "|"
+                          + pessoa.email + "|"
+                          + pessoa.endereco)
+            arq.writelines('\n')
+
+    @classmethod
+    def ler(cls):
+        with open('clientes.txt', 'r') as arq:
+            cls.clientes = arq.readlines()
+        cls.clientes = list(map(lambda x: x.replace('\n', ''), cls.clientes))
+        cls.clientes = list(map(lambda x: x.split('|'), cls.clientes))
+        clientes = []
+        for i in cls.clientes:
+            clientes.append(Pessoa(i[0], i[1], i[2], i[3], i[4]))
+        return clientes
+        
