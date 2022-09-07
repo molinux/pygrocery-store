@@ -39,5 +39,11 @@ from DAO import *
 # ========== CLIENTES ==========
 # x = Pessoa('Andressa Santos', '99877788', '98789876545', 'andressa.santos@uol.com.br', 'Rua Olavo Bilac, 456 - Tijuca')
 # DaoPessoa.salvar(x)
-x = DaoPessoa.ler()
-print(x[0].nome, x[0].email)
+# x = DaoPessoa.ler()
+# print(x[0].nome, x[0].email)
+
+# ========== FUNCIONARIOS ==========
+# x = Funcionario('99999999999999', 'Luisa Andressa', '2198778899', '96877897877', 'luisa.andressa@gmail.com', 'Rua dos Abrólios, 444')
+# DaoFuncionario.salvar(x)
+x = DaoFuncionario.ler()
+print(x[0].clt, x[0].nome)
