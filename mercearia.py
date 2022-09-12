@@ -1,4 +1,3 @@
-from multiprocessing.connection import Client
 from Controller import ControllerCategoria
 from DAO import *
 
@@ -14,7 +13,8 @@ from DAO import *
 #     print(i.categoria)
 a = ControllerCategoria()
 # a.cadastrarCategoria('Frios')
-a.removerCategoria('Legumes')
+# a.removerCategoria('Legumes')
+a.alterarCategoria('Embutidos', 'Verduras')
 
 # ========== VENDAS ==========
 # Instanciando um produto para poder fazer a venda
