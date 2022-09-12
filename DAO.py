@@ -6,7 +6,7 @@ class DaoCategoria:
         with open('categoria.txt', 'a') as arq:
             arq.writelines(categoria)
             arq.writelines('\n')
-        print(f'Categoria {categoria} criada com sucesso !')
+        # print(f'Categoria {categoria} criada com sucesso !')
 
     @classmethod
     def ler(cls):

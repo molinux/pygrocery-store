@@ -1,4 +1,5 @@
 from multiprocessing.connection import Client
+from Controller import ControllerCategoria
 from DAO import *
 
 # Let's test this !
@@ -11,6 +12,9 @@ from DAO import *
 # Ler
 # for i in DaoCategoria.ler():
 #     print(i.categoria)
+a = ControllerCategoria()
+# a.cadastrarCategoria('Frios')
+a.removerCategoria('Legumes')
 
 # ========== VENDAS ==========
 # Instanciando um produto para poder fazer a venda
@@ -45,5 +49,5 @@ from DAO import *
 # ========== FUNCIONARIOS ==========
 # x = Funcionario('99999999999999', 'Luisa Andressa', '2198778899', '96877897877', 'luisa.andressa@gmail.com', 'Rua dos Abrólios, 444')
 # DaoFuncionario.salvar(x)
-x = DaoFuncionario.ler()
-print(x[0].clt, x[0].nome)
+# x = DaoFuncionario.ler()
+# print(x[0].clt, x[0].nome)
