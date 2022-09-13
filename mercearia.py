@@ -14,7 +14,8 @@ from DAO import *
 a = ControllerCategoria()
 # a.cadastrarCategoria('Frios')
 # a.removerCategoria('Legumes')
-a.alterarCategoria('Embutidos', 'Verduras')
+# a.alterarCategoria('Embutidos', 'Verduras')
+a.mostrarCategoria()
 
 # ========== VENDAS ==========
 # Instanciando um produto para poder fazer a venda
