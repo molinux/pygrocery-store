@@ -1,4 +1,3 @@
-from genericpath import exists
 from Models import *
 from DAO import *
 from datetime import datetime
@@ -67,3 +66,52 @@ class ControllerCategoria:
             return 0
         for i in categorias:
             print(f'Categoria: {i.categoria}')
+
+class ControllerEstoque:
+    def cadastrarProduto(self, nome, preco, categoria, quantidade):
+        x = DaoEstoque.ler()
+        y = DaoCategoria.ler()
+        h = list(filter(lambda x: x.categoria == categoria, y))
+        est = list(filter(lambda x: x.produto.nome == nome, x))
+
+        if len(h) > 0:
+            if len(est) == 0:
+                produto = Produtos(nome, preco, categoria)
+                DaoEstoque.salvar(produto, quantidade)
+                print(f'Produto {nome} cadastrado com sucesso !')
+            else:
+                print('Produto já existe no estoque')
+        else:
+            print('Categoria inexistente')
+
+    def alterarProduto(self, nomeAlterar, novoNome, novoPreco, novaCategoria, novaQuantidade):
+        x = DaoEstoque.ler()
+        y = DaoCategoria.ler()
+        h = list(filter(lambda x: x.categoria == novaCategoria, y))
+
+        # Check if category exists in Estoque
+        if len(h) > 0:
+            est = list(filter(lambda x: x.produto.nome == nomeAlterar, x))
+            # Check if product exits in Estoque
+            if len(est) > 0:
+                # Add novoNome to est variable
+                est = list(filter(lambda x: x.produto.nome == novoNome, x))
+                # Just change if novoNome doesn't exists
+                if len(est) == 0:
+                    x = list(map(lambda x: Estoque(Produtos(novoNome, novoPreco, novaCategoria), novaQuantidade) if(x.produto.nome == nomeAlterar) else(x), x))
+                    print ('Produto cadastrado com sucesso !')
+                else:
+                    print ('Produto já cadastrado')
+            else:
+                print('O produto que deseja alterar não existe')
+
+            # Let's put it on estoque.txt
+            with open('estoque.txt', 'w') as arq:
+                for i in x:
+                    arq.writelines(i.produto.nome + "|"
+                                + i.produto.preco + "|"
+                                + i.produto.categoria + "|"
+                                + str(i.quantidade))
+                    arq.writelines('\n')
+        else:
+            print('A categoria informada não existe')

@@ -1,4 +1,4 @@
-from Controller import ControllerCategoria
+from Controller import ControllerCategoria, ControllerEstoque
 from DAO import *
 
 # Let's test this !
@@ -11,11 +11,11 @@ from DAO import *
 # Ler
 # for i in DaoCategoria.ler():
 #     print(i.categoria)
-a = ControllerCategoria()
+# a = ControllerCategoria()
 # a.cadastrarCategoria('Frios')
 # a.removerCategoria('Legumes')
 # a.alterarCategoria('Embutidos', 'Verduras')
-a.mostrarCategoria()
+# a.mostrarCategoria()
 
 # ========== VENDAS ==========
 # Instanciando um produto para poder fazer a venda
@@ -34,6 +34,9 @@ a.mostrarCategoria()
 # DaoEstoque.salvar(x, 20)
 # x = DaoEstoque.ler()
 # print(f"{x[0].produto.nome}, {x[0].quantidade}")
+x = ControllerEstoque()
+# x.cadastrarProduto('Couve', '0.99', 'Verduras', '20')
+x.alterarProduto('Pitaya', 'Pitaya', '6', 'Frutas', '20')
 
 # ========== FORNECEDORES ==========
 # x = Fornecedor('Arita Comércio', '98787654323456', '2299887766', 'Verduras')
