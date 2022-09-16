@@ -36,7 +36,8 @@ from DAO import *
 # print(f"{x[0].produto.nome}, {x[0].quantidade}")
 x = ControllerEstoque()
 # x.cadastrarProduto('Couve', '0.99', 'Verduras', '20')
-x.alterarProduto('Pitaya', 'Pitaya', '6', 'Frutas', '20')
+# x.alterarProduto('Pitaya', 'Pitaya', '6', 'Frutas', '20')
+x.mostrarEstoque()
 
 # ========== FORNECEDORES ==========
 # x = Fornecedor('Arita Comércio', '98787654323456', '2299887766', 'Verduras')
